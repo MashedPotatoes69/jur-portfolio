@@ -148,7 +148,7 @@ const skills = [
   { name: "Resolume", level: "Intermediate", amount: "64%" },
   { name: "grandMA3", level: "Beginner / Intermediate", amount: "48%" },
   { name: "Rigging", level: "Practical experience", amount: "76%" },
-  { name: "VJ'ing", level: "Beginner", amount: "34%" },
+  { name: "VJ'ing", level: "Intermediate", amount: "34%" },
 ];
 
 function BrandMark() {
@@ -247,7 +247,7 @@ function Portfolio() {
           <div className="relative h-56 overflow-hidden bg-stage sm:h-72 lg:h-80">
             <img
               src={wijdewormerCover}
-              alt="Feestweek Wijdewormer main stage lit in red and white beams"
+              alt="Feestweek Wijdewormer main stage"
               className="h-full w-full object-cover object-center"
             />
             <div className="absolute inset-0 bg-stage-overlay" />
@@ -421,10 +421,10 @@ function Portfolio() {
                 <article className="experience-row">
                   <div className="experience-mark"><GraduationCap size={23} /></div>
                   <div>
-                    <h3>Live production study</h3>
+                    <h3>Allround Stage and Event technologies study</h3>
                     <p className="mt-1 text-sm text-muted-foreground">Currently studying</p>
                     <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                      Combining formal learning with hands-on experience in lighting and event production.
+                      Combining learning with experience build on school and work in lighting and event production.
                     </p>
                   </div>
                 </article>
