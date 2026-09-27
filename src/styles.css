@@ -1,0 +1,169 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+  --radius-sm: calc(var(--radius) - 3px);
+  --radius-md: calc(var(--radius) - 1px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+  --color-header: var(--header);
+  --color-header-foreground: var(--header-foreground);
+  --color-header-border: var(--header-border);
+  --color-profile: var(--profile);
+  --color-profile-foreground: var(--profile-foreground);
+  --color-status: var(--status);
+  --color-stage: var(--stage);
+  --color-stage-foreground: var(--stage-foreground);
+  --color-contact: var(--contact);
+  --color-contact-foreground: var(--contact-foreground);
+  --color-contact-muted: var(--contact-muted);
+  --shadow-profile: var(--shadow-profile);
+}
+
+:root {
+  --radius: 0.5rem;
+  --background: oklch(0.955 0.005 20);
+  --foreground: oklch(0.19 0.014 20);
+  --surface: oklch(1 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.19 0.014 20);
+  --primary: oklch(0.54 0.225 27);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.94 0.018 25);
+  --secondary-foreground: oklch(0.42 0.17 27);
+  --muted: oklch(0.925 0.006 20);
+  --muted-foreground: oklch(0.47 0.015 20);
+  --accent: oklch(0.9 0.045 24);
+  --accent-foreground: oklch(0.43 0.18 27);
+  --border: oklch(0.86 0.008 20);
+  --ring: oklch(0.54 0.225 27);
+  --header: oklch(0.14 0.012 20);
+  --header-foreground: oklch(0.985 0 0);
+  --header-border: oklch(1 0 0 / 0.12);
+  --profile: oklch(0.18 0.012 20);
+  --profile-foreground: oklch(0.985 0 0);
+  --status: oklch(0.68 0.15 145);
+  --stage: oklch(0.12 0.02 20);
+  --stage-foreground: oklch(0.96 0.01 20);
+  --contact: oklch(0.16 0.013 20);
+  --contact-foreground: oklch(0.985 0 0);
+  --contact-muted: oklch(0.74 0.009 20);
+  --shadow-profile: 0 4px 18px oklch(0.1 0.01 20 / 0.24);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    letter-spacing: 0;
+  }
+  button, a { -webkit-tap-highlight-color: transparent; }
+  :focus-visible { outline: 3px solid var(--color-ring); outline-offset: 3px; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+  }
+}
+
+@layer components {
+  .profile-shell {
+    @apply mx-auto max-w-6xl overflow-hidden border-x border-b border-border bg-surface sm:rounded-b-lg;
+  }
+  .content-section {
+    @apply rounded-lg border border-border bg-surface p-5 sm:p-6;
+  }
+  .section-heading { @apply flex items-center gap-3; }
+  .section-heading h2, .content-section > h2 { @apply font-display text-2xl font-bold; }
+  .section-icon { @apply grid size-10 shrink-0 place-items-center rounded-sm bg-secondary text-primary; }
+  .eyebrow { @apply font-mono text-[10px] font-bold uppercase text-primary; }
+  .nav-link { @apply border-b-2 border-transparent py-5 text-sm font-semibold text-header-foreground/75 transition-colors hover:border-primary hover:text-header-foreground; }
+  .mobile-nav-link { @apply rounded-sm px-3 py-3 text-sm font-semibold text-header-foreground/80 hover:bg-header-foreground/10 hover:text-header-foreground; }
+  .icon-link { @apply grid size-10 place-items-center rounded-full text-header-foreground/75 transition-colors hover:bg-header-foreground/10 hover:text-header-foreground; }
+  .contact-button { @apply inline-flex h-9 items-center justify-center rounded-full bg-primary px-5 text-sm font-bold text-primary-foreground transition-colors hover:bg-primary/85; }
+  .primary-action { @apply inline-flex h-10 items-center gap-2 rounded-full bg-primary px-5 text-sm font-bold text-primary-foreground transition-colors hover:bg-primary/85; }
+  .status-pill { @apply inline-flex items-center gap-2 rounded-full bg-secondary px-3 py-1 text-xs font-bold text-secondary-foreground; }
+  .experience-row { @apply grid grid-cols-[3rem_minmax(0,1fr)] gap-4 py-5 first:pt-0 last:pb-0; }
+  .experience-row h3 { @apply text-base font-bold; }
+  .experience-mark { @apply grid size-12 place-items-center rounded-sm bg-profile font-display text-lg font-black text-profile-foreground; }
+  .project-card { @apply overflow-hidden rounded-md border border-border bg-surface transition-shadow hover:shadow-md; }
+  .highlight-gallery { @apply grid aspect-[16/10] overflow-hidden bg-stage; }
+  .highlight-gallery-single { @apply relative block; }
+  .highlight-gallery-single > * { @apply absolute inset-0; }
+  .highlight-gallery-multi { @apply grid-cols-[2fr_1fr] grid-rows-2 gap-px bg-border; }
+  .highlight-gallery-multi > *:first-child { @apply row-span-2; }
+  .gallery-trigger {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    min-height: 0;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 0;
+    cursor: zoom-in;
+  }
+  .gallery-media { @apply h-full w-full object-cover transition-transform duration-500 group-hover/media:scale-[1.035]; }
+  .gallery-expand { @apply absolute right-2 top-2 grid size-8 place-items-center rounded-full bg-header/80 text-header-foreground opacity-0 shadow-sm transition-opacity group-hover/media:opacity-100 group-focus-visible/media:opacity-100; }
+  .media-viewer { @apply fixed inset-0 z-[100] grid place-items-center bg-header/90 p-3 backdrop-blur-sm sm:p-8; animation: viewer-fade-in 240ms ease-out both; }
+  .media-viewer-frame { @apply flex h-[92vh] w-[96vw] items-center justify-center overflow-hidden rounded-md bg-stage shadow-2xl; animation: viewer-scale-in 280ms ease-out both; }
+  .media-viewer-frame img, .media-viewer-frame video { @apply h-full w-full object-contain; }
+  .media-viewer-close { @apply absolute right-4 top-4 z-10 rounded-full bg-surface/95 text-foreground shadow-lg hover:bg-primary hover:text-primary-foreground sm:right-7 sm:top-7; }
+  .archive-row { @apply grid gap-3 sm:grid-cols-[3.5rem_minmax(0,1fr)] sm:items-start; }
+  .archive-tag { @apply rounded-full border border-border bg-background px-3 py-1 text-xs font-semibold text-muted-foreground; }
+  .stage-card {
+    @apply relative flex min-h-44 flex-col justify-between overflow-hidden rounded-md border border-border bg-stage p-5 text-stage-foreground;
+  }
+  .stage-card::before {
+    content: "";
+    position: absolute;
+    top: -45%;
+    right: -12%;
+    width: 55%;
+    aspect-ratio: 1;
+    border-radius: 9999px;
+    background: radial-gradient(closest-side, oklch(0.54 0.225 27 / 0.55), transparent 72%);
+  }
+  .stage-card > * { position: relative; }
+  .contact-panel { @apply rounded-lg bg-contact p-5 sm:p-6; }
+  .contact-link { @apply flex min-h-11 items-center gap-3 rounded-sm border border-contact-foreground/15 px-3 text-sm font-semibold text-contact-foreground transition-colors hover:border-primary hover:bg-primary; }
+}
+
+@keyframes viewer-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes viewer-scale-in {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.bg-stage-overlay {
+  background: linear-gradient(180deg, oklch(0.1 0.02 20 / 0.04) 25%, oklch(0.1 0.02 20 / 0.68) 100%);
+}
