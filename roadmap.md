@@ -1,9 +1,10 @@
 # Roadmap
 
-- [x] Fix the desktop Highlights layout.
-- [x] Make Drum Embrace clips play on cursor hover without requiring a play button.
-- [x] Make every Highlights photo or video open fullscreen.
-- [x] Verify desktop and mobile behavior.
-- [x] Make the site buildable as static files for GitHub Pages (prerendered, self-contained assets).
-- [x] Add a GitHub Actions workflow that builds and deploys to GitHub Pages on push to main.
-- [x] Verify the static build renders fully in a browser (16 media files, zero broken, no console errors).
+## Done
+- Highlights section (Dijkpop 2025, Drum Embrace 2026, Wijdewormer Feestweek, The Upper Club, ITGWO 2025)
+- Click-to-fullscreen media viewer with fade animation; hover-to-play videos
+- Desktop layout fix for highlight cards
+- GitHub Pages deployment: repo MashedPotatoes69/jur-portfolio, auto-deploy workflow, live at https://mashedpotatoes69.github.io/jur-portfolio/
+
+## Open
+- Future Lovable edits do not auto-sync to GitHub — re-push manually or connect Git sync (editor: + menu → GitHub)

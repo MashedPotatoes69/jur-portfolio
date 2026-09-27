@@ -148,7 +148,7 @@ const skills = [
   { name: "Resolume", level: "Intermediate", amount: "64%" },
   { name: "grandMA3", level: "Beginner / Intermediate", amount: "48%" },
   { name: "Rigging", level: "Practical experience", amount: "76%" },
-  { name: "VJ'ing", level: "Intermediate", amount: "34%" },
+  { name: "VJ'ing", level: "Beginner", amount: "34%" },
 ];
 
 function BrandMark() {
@@ -247,7 +247,7 @@ function Portfolio() {
           <div className="relative h-56 overflow-hidden bg-stage sm:h-72 lg:h-80">
             <img
               src={wijdewormerCover}
-              alt="Feestweek Wijdewormer main stage"
+              alt="Feestweek Wijdewormer main stage lit in red and white beams"
               className="h-full w-full object-cover object-center"
             />
             <div className="absolute inset-0 bg-stage-overlay" />
@@ -274,13 +274,10 @@ function Portfolio() {
                 LinkedIn <ArrowUpRight size={16} />
               </a>
             </div>
-            <div className="max-w-3xl">
-              <div className="flex flex-wrap items-center gap-3">
+              <div className="max-w-3xl">
                 <h1 id="profile-heading" className="font-display text-4xl font-black sm:text-5xl">
                   Jur Ruiter
                 </h1>
-                <span className="status-pill"><span className="size-1.5 rounded-full bg-status" />Available</span>
-              </div>
               <p className="mt-2 text-xl font-semibold text-foreground">Lighting Designer &amp; Operator</p>
               <p className="mt-3 max-w-2xl text-base leading-7 text-muted-foreground">
                 17-year-old lighting professional working across venues, rentals and live productions.
@@ -421,10 +418,10 @@ function Portfolio() {
                 <article className="experience-row">
                   <div className="experience-mark"><GraduationCap size={23} /></div>
                   <div>
-                    <h3>Allround Stage and Event technologies study</h3>
+                    <h3>Live production study</h3>
                     <p className="mt-1 text-sm text-muted-foreground">Currently studying</p>
                     <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                      Combining learning with experience build on school and work in lighting and event production.
+                      Combining formal learning with hands-on experience in lighting and event production.
                     </p>
                   </div>
                 </article>
